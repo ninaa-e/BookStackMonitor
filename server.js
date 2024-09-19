@@ -5,11 +5,9 @@ const app = express();
 require('dotenv').config()
 
 const port = process.env.SERVER_PORT || 3000;
-app.listen(port,process.env.SERVER_IP, () => {
+app.listen(port,process.env.SERVER_IP || "127.0.0.1", () => {
   console.log(`Server listening on port ${port}`);
 });
-
-console.log(`key is ${process.env.SERVER_API_KEY}`);
 
 app.use(express.json());
 
