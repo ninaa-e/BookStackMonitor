@@ -1,0 +1,4 @@
+.env
+catch
+node_modules
+package-lock.json
