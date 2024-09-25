@@ -1,9 +1,4 @@
-const { loadEvents } = require("./drivers/events.js");
-require('dotenv').config()
+const { get } = require("./drivers/message.js");
 
 
-  
-console.log("Alle Ereignisse")
-loadEvents().forEach(element => {
-    console.log(element.text)
-});
+console.log(get(240))
