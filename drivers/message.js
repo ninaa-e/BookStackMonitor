@@ -1,4 +1,4 @@
-const { loadEvents } = require('./events');
+const { loadEvents,clearEvents } = require('./events');
 
 const eventTypeMessages = {
     page_create: "created pages",
@@ -100,10 +100,10 @@ const eventTypeEmojis = {
     webhook_delete: "🌐🗑️"
 }
 
-function get(std) {
+function get(hrs,clear=false) {
 
     let byUsers = {};
-    loadEvents(new Date((Date.now() - 1000*60*60*std))).forEach(log => {
+    loadEvents(new Date((Date.now() - 1000*60*60*hrs))).forEach(log => {
         switch (log.event) {
             case "user_create":
                 byUsers[log.related_item.id] = {actions:{},user:log.related_item,isNew:true,createdBy:log.triggered_by.id};
@@ -131,7 +131,8 @@ function get(std) {
 
 
     });
-
+    if(clear)
+        clearEvents()
 
     let events = []
 
@@ -165,8 +166,8 @@ function get(std) {
     }
 
     let message = events.length == 0 ?
-     `<b>No Wiki Events in the last ${std} hours.</b>` :
-     `<b>Wiki Events in the last ${std} hours:</b>\n\n${events.join("\n\n")}`
+     `<b>No Wiki Events in the last ${hrs} hours.</b>` :
+     `<b>Wiki Events in the last ${hrs} hours:</b>\n\n${events.join("\n\n")}`
     
     return message;
 }

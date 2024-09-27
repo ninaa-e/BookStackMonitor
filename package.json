@@ -1,17 +1,16 @@
 {
-  "name": "bewegungswikibot",
+  "name": "bookstack-montor",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "server": "node server.js",
-    "test": "node test.js",
-    "telegram": "node telegram.js"
+    "telegram": "node cli.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^12.1.0",
     "dotenv": "^16.4.5",
-    "ejs": "^3.1.10",
     "express": "^4.21.0",
     "fs": "^0.0.1-security",
     "jsonfile": "^6.1.0",
