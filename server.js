@@ -12,7 +12,7 @@ let path = process.env.SERVER_REL_PATH || null;
 if(path == null)
     throw new Error("Required SERVER_REL_PATH in .env");
 
-app.listen(ip, () => {
+app.listen(port,ip, () => {
   console.log(`Server listening on port ${port} at ${ip}`);
 });
 
