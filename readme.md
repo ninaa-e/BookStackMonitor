@@ -1,13 +1,13 @@
-**A Bookstack Monitor**
-A Monitor for [Bookstack](https://www.bookstackapp.com/) events.
+# BookStackMonitor
+A telegram (and soon matrix) based monitor for [Bookstack](https://www.bookstackapp.com/) events.
 
-**Features**
+## Features
 Collection of events from [Bookstack through a Webhook](https://www.bookstackapp.com/docs/admin/email-webhooks/) 
 Event summary message generation
 Chat implenetations: Telegram and Matrix (in Progress)
 CLI for easier usage
 
-**Todo**
-Add Matrix implenetation
-Review if webhooks are the way to go. Bookstack API might be a better alterantiv.
-Write usage guide
+## Todos
+- Add Matrix implenetation
+- Review if webhooks are the way to go. Bookstack API might be a better alterantiv.
+- Write usage guide
