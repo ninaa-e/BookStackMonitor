@@ -1,5 +1,5 @@
 **A Bookstack Monitor**
-A Montir for [Bookstack](https://www.bookstackapp.com/) events.
+A Monitor for [Bookstack](https://www.bookstackapp.com/) events.
 
 **Features**
 Collection of events from [Bookstack through a Webhook](https://www.bookstackapp.com/docs/admin/email-webhooks/) 
