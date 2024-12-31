@@ -100,10 +100,9 @@ const eventTypeEmojis = {
     webhook_delete: "🌐🗑️"
 }
 
-function get(hrs,clear=false) {
+function groupEventsByUsers(events) {
 
-    let byUsers = {};
-    loadEvents(new Date((Date.now() - 1000*60*60*hrs))).forEach(log => {
+    events.forEach(log => {
         switch (log.event) {
             case "user_create":
                 byUsers[log.related_item.id] = {actions:{},user:log.related_item,isNew:true,createdBy:log.triggered_by.id};
@@ -131,6 +130,13 @@ function get(hrs,clear=false) {
 
 
     });
+
+}
+
+function get(hrs,clear=false) {
+
+    let byUsers = groupEventsByUsers(loadEvents(new Date((Date.now() - 1000*60*60*hrs))))
+    
     if(clear)
         clearEvents()
 
