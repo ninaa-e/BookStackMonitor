@@ -9,5 +9,5 @@ CLI for easier usage
 
 ## Todos
 - Add Matrix implenetation
-- Review if webhooks are the way to go. Bookstack API might be a better alterantiv.
+- Review if Bookstack-Webhooks are the way to go. The Bookstack-API might be an alternative.
 - Write usage guide
