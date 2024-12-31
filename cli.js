@@ -7,18 +7,17 @@ program
   .name('bookstack-monitor')
   .version('0.8.0');
 
-const catchCmd = program.command('catch').description('Options for catch')
-catchCmd.command("clear")
-  .description('clear the catch')
+const cacheCmd = program.command('cache').description('Options for cache')
+cacheCmd.command("clear")
+  .description('clear the cache')
     .action(() => {
         events.clearEvents()
   });
-catchCmd.command("size")
-  .description('print the catch size')
+cacheCmd.command("size")
+  .description('print the cache size')
     .action(() => {
     console.log(events.loadEvents().length)
   });
-
 
 const telegramCmd = program.command('telegram').description('Options for telegram')
 telegramCmd.command("get-channel-id")
